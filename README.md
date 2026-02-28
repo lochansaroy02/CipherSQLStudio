@@ -160,6 +160,59 @@ MongoDB Atlas (Store questions/history)
 ```
 
 ---
+### Folder structure
+```
+
+└── 📁sql-sandbox
+    └── 📁client
+        └── 📁public
+            ├── vite.svg
+        └── 📁src
+            └── 📁assets
+                ├── react.svg
+            └── 📁components
+                ├── Editor.tsx
+                ├── Question.tsx
+                ├── Sidebar.tsx
+            └── 📁pages
+                ├── Home.tsx
+            └── 📁store
+                ├── queryStore.ts
+                ├── QuestionStore.ts
+            └── 📁styles
+                ├── _editor.scss
+                ├── _home.scss
+                ├── _layout.scss
+                ├── _question.scss
+                ├── _sidebar.scss
+            ├── App.tsx
+            ├── Layout.tsx
+            ├── main.tsx
+    └── 📁server
+        └── 📁prisma
+            ├── schema.prisma
+        └── 📁src
+            └── 📁configs
+                ├── query.ts
+            └── 📁controllers
+                ├── aiContoller.ts
+                ├── queryController.ts
+                ├── questionController.ts
+                ├── userController.ts
+            └── 📁db
+                ├── postgres.ts
+            └── 📁genAI
+                ├── ai.ts
+            └── 📁routes
+                ├── aiRoutes.ts
+                ├── queryRoutes.ts
+                ├── questionRoutes.ts
+                ├── userRoutes.ts
+            └── 📁utils
+                ├── prisma.ts
+            ├── index.ts
+```
+---
 
 # 🧠 Technology Choices Explanation
 
