@@ -1,0 +1,19 @@
+.layout {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .sidebar {
+
+        position: fixed;
+    }
+
+    .content {
+
+        display: flex;
+        background-color: red;
+        overflow: hidden;
+        width: 70%;
+    }
+}

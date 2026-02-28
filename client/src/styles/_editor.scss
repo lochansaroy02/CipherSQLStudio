@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.run-btn {
+    padding: 10px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

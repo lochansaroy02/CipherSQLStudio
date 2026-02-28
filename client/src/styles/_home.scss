@@ -1,0 +1,123 @@
+.home-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f9f9f9; // Light background for contrast
+    box-sizing: border-box;
+
+    .home-header {
+        width: 90%;
+        max-width: 1400px;
+        margin-bottom: 30px;
+
+        h1 {
+            color: #262626;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
+            font-family: "Google Sans", sans-serif;
+        }
+    }
+
+    .question-container {
+        width: 90%;
+        max-width: 1400px;
+        display: grid;
+        gap: 20px; // Increased gap for better breathing room
+        grid-template-columns: 1fr; // Default: 1 column for mobile
+
+        // --- TABLETS ---
+        @media (min-width: 641px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        // --- DESKTOP ---
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        // --- ULTRA WIDE ---
+        @media (min-width: 1600px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .question-item {
+            text-decoration: none;
+            border-radius: 12px;
+            padding: 16px; // Uniform padding
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                background-color: #fdfdfd;
+            }
+
+            .question-header-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                h2 {
+                    color: #18181b;
+                    font-weight: 500;
+                    font-family: "Google Sans", sans-serif;
+                    font-size: 1.1rem;
+                    margin: 0;
+                    // Prevents long titles from breaking the layout
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+
+            p {
+                color: #52525b;
+                margin: 0;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                // Clamp text to 2 lines
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .difficulty-tag {
+                width: fit-content;
+                padding: 4px 12px;
+                border-radius: 99px; // Pill shape
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+
+                &.easy {
+                    background-color: #dcfce7;
+                    color: #166534;
+                    border: 1px solid #bbf7d0;
+                }
+
+                &.medium {
+                    background-color: #ffedd5;
+                    color: #9a3412;
+                    border: 1px solid #fed7aa;
+                }
+
+                &.hard {
+                    background-color: #fee2e2;
+                    color: #991b1b;
+                    border: 1px solid #fecaca;
+                }
+            }
+        }
+    }
+}

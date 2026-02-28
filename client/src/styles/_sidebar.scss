@@ -1,0 +1,124 @@
+// Variables
+$sidebar-bg: #f4f4f4;
+$primary-dark: #262626;
+$accent-color: #404040;
+$hover-bg: #e0e0e0;
+$mobile-breakpoint: 768px;
+
+.sidebar-main {
+    background-color: $sidebar-bg;
+    height: 100vh;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+    transition: transform 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    // Mobile state: Hidden by default on small screens
+    @media (max-width: $mobile-breakpoint) {
+        position: fixed;
+        left: 0;
+        transform: translateX(-100%); // Slide out of view
+        width: 80%; // Take up most of the screen when open
+
+        &.is-open {
+            transform: translateX(0); // Slide in
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .home-div {
+        display: flex;
+        flex-direction: column;
+
+        .home-button {
+            background-color: $accent-color;
+            padding: 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+
+            h2 {
+                margin: 0;
+                color: white;
+                font-family: "Google Sans", sans-serif;
+                font-size: 1.2rem;
+                letter-spacing: 0.5px;
+            }
+
+            &:hover {
+                background-color: #d32f2f; // Improved red
+            }
+        }
+    }
+
+    .question-container {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .question-item {
+            .question-text {
+                font-size: 0.95rem;
+                font-weight: 400;
+                text-decoration: none;
+                font-family: "Google Sans", sans-serif;
+                color: $primary-dark;
+                padding: 10px 15px;
+                display: block;
+                border-radius: 8px;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &:hover {
+                    background-color: $hover-bg;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+// Mobile Toggle Button (only visible on mobile)
+.mobile-toggle {
+    display: none;
+
+    @media (max-width: $mobile-breakpoint) {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1001;
+        background: $accent-color;
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+// Overlay to close sidebar when clicking outside on mobile
+.sidebar-overlay {
+    @media (max-width: $mobile-breakpoint) {
+        display: none;
+
+        &.active {
+            display: block;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+    }
+}
